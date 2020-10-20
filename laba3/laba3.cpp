@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string>
 
-#define N 4
+#define COUNT_CARS 4
 
 #define fflush while (getchar()!='\n')
 
@@ -37,10 +37,36 @@ public:
         color = _color;
         cost = _cost;
     }
+
+    void read() { //Ввод данных
+        std::cout << "Enter a brand: ";   std::cin >> brand;
+        std::cout << "Enter a model: ";   std::cin >> model;
+        std::cout << "Enter a year: ";    std::cin >> year;
+        std::cout << "Enter a power: ";   std::cin >> power;
+        std::cout << "Enter a weight: ";  std::cin >> weight;
+        std::cout << "Enter a color: ";   std::cin >> color;
+        std::cout << "Enter a cost: ";    std::cin >> cost;
+    }
+
+    void display() {
+        std::cout << brand << std::endl;
+        std::cout << model << std::endl;
+        std::cout << year << std::endl;
+        std::cout << power << std::endl;
+        std::cout << weight << std::endl;
+        std::cout << color << std::endl;
+        std::cout << cost << std::endl;
+        std::cout <<  std::endl;
+    }
 };
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  //  std::cout << "Hello World!\n";
+    car veh[4];
+    veh[0].init();
+    veh[1].init("mazda", "3", 2006, 110, 1300, "red", 200000);
+    veh[2].read();
+    for (int i = 0; i < 4; i++) veh[i].display();
 }
 
